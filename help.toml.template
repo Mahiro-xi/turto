@@ -245,3 +245,120 @@ short_description = "在播放清單的最前面加入新的項目"
 description = "在播放清單的最前面加入新的項目，參數`url`可以是任何連結，支援多種影音平台，只要是yt-dlp有支援的皆可。你也可以直接加入整個YouTube播放清單，帶有播放清單的YouTube網址會優先加入整個播放清單。"
 [zh-TW.insert.parameters]
 url = "要加入到播放清單中的連結"
+
+# 以下は各コマンドのヘルプ情報です。
+# "short_description" はスラッシュコマンドのプレビューに使用され、100文字の制限があります。
+# "description" は help コマンドに使用されます。
+# "parameters" の内容は各コマンドの各パラメータです。
+# turtoは多言語に対応しています。
+# デフォルト設定をコピーすることで、新しい言語サポートを追加できます。
+# ただし、"default" を希望するLCID (Locale ID) に変更する必要があります。
+# 例えば "Chinese - Taiwan" の場合、"default" を "zh-TW" に変更する必要があります。
+# 以下は日本語用の設定です。
+
+[ja-JP.autoleave]
+short_description = "自動離脱をオン/オフ"
+description = "自動離脱を有効（`on`、`empty`、`silent`）または無効（`off`）にします。自動離脱が有効になっている場合、再生が終了または停止し、再生リストが空の場合、turtoは自動的にボイスチャンネルから離脱します。 - `on`: 再生していない、またはボイスチャンネルに誰もいない場合、turtoは自動的にボイスチャンネルから離脱します。 - `empty`: ボイスチャンネルに誰もいない場合、turtoは自動的にボイスチャンネルから離脱します。 - `silent`: 再生していない場合、turtoは自動的にボイスチャンネルから離脱します。 - `off`: turtoは自動的に離脱しません。"
+[ja-JP.autoleave.parameters]
+toggle = "自動離脱機能をオン/オフにします。詳細な使用方法は help コマンドの情報を参照してください。"
+
+[ja-JP.join]
+short_description = "turtoをあなたのボイスチャンネルに参加させる"
+description = "turtoが他のボイスチャンネルにいない場合、あなたのボイスチャンネルに参加します。"
+
+[ja-JP.leave]
+short_description = "turtoを現在のボイスチャンネルから離脱させる"
+description = "あなたとturtoが同じボイスチャンネルにいる場合、現在のボイスチャンネルからturtoを離脱させます。"
+
+[ja-JP.pause]
+short_description = "再生中の項目を一時停止する"
+description = "再生中の項目を一時停止します。"
+
+[ja-JP.play]
+short_description = "再生を開始する"
+description = "再生を開始します。turtoが他のボイスチャンネルにいない場合、あなたのボイスチャンネルに参加します。以下のいずれかの状況に応じて動作します： 1. `url` パラメータが指定されている場合、再生中の項目を中断し、指定されたコンテンツの再生を開始します。現在、YouTube、Bilibiliの動画、およびSoundcloudの音楽などをサポートしています（他のメディアプラットフォームも試してみてください。yt-dlpがサポートしているものなら再生できます）。 2. `url` パラメータが指定されていない場合、現在一時停止中の項目を再生します。 3. `url` パラメータが指定されておらず、現在一時停止中の項目もない場合、再生リストの最初から再生を開始します。"
+
+[ja-JP.play.parameters]
+url = "オプション、再生するリンク"
+
+[ja-JP.playlist]
+short_description = "現在の再生リストを表示する"
+description = "現在の再生リストを表示します。サーバー全体で同じ再生リストを共有します。再生リストの項目数が10個を超える場合、10個ずつページに分けて表示します。`page` を入力してページ数を指定するか、メニューでページ数を指定できます。Discordのメニューは25個の選択肢に制限されているため、再生リストに250個以上の項目がある場合は `page` を入力する必要があります。"
+[ja-JP.playlist.parameters]
+page = "オプション、表示するページ数"
+
+[ja-JP.playwhat]
+short_description = "現在再生中の項目を表示する"
+description = "現在再生中の項目を表示します。"
+
+[ja-JP.queue]
+short_description = "再生リストの最後に新しい項目を追加する"
+description = "再生リストの最後に新しい項目を追加します。`url` パラメータには任意のリンクを指定できます。複数のメディアプラットフォームをサポートしており、yt-dlpがサポートしているものであれば再生できます。YouTubeの再生リスト全体も追加できます。再生リスト付きのYouTube URLは再生リスト全体を優先して追加します。"
+[ja-JP.queue.parameters]
+url = "再生リストに追加するリンク"
+
+[ja-JP.seek]
+short_description = "特定の時間にジャンプする"
+description = "現在再生中または一時停止中の項目がある場合、再生時間を `time` 秒にジャンプします。"
+[ja-JP.seek.parameters]
+time = "ジャンプする時間（秒単位）"
+
+[ja-JP.skip]
+short_description = "現在再生中の項目をスキップする"
+description = "現在再生中の項目をスキップし、再生リストの次の項目（あれば）を再生します。"
+
+[ja-JP.stop]
+short_description = "現在再生中の項目を停止する"
+description = "現在再生中の項目を停止します。"
+
+[ja-JP.volume]
+short_description = "音量を調整する"
+description = "音量を `value` に調整します。最小は0（ミュート）、最大は100です。サーバー全体で同じ音量を共有します。`value` パラメータを指定しない場合、現在の音量を表示します。"
+[ja-JP.volume.parameters]
+value = "音量の値、最小は0、最大は100"
+
+[ja-JP.ban]
+short_description = "ユーザーをブロックする"
+description = "指定されたユーザー（`user` パラメータ）をブロックします。ブロックされたユーザーは、いかなるコマンドも使用できなくなります。このコマンドは管理者またはオーナーのみが使用できます。"
+[ja-JP.ban.parameters]
+user = "ブロックするユーザー"
+
+[ja-JP.unban]
+short_description = "ユーザーのブロックを解除する"
+description = "指定されたユーザー（`user` パラメータ）のブロックを解除します。このコマンドは管理者またはオーナーのみが使用できます。"
+[ja-JP.unban.parameters]
+user = "ブロックを解除するユーザー"
+
+[ja-JP.shuffle]
+short_description = "再生リストをシャッフルする"
+description = "再生リストをシャッフルします。"
+
+[ja-JP.repeat]
+short_description = "単曲ループをオン/オフ"
+description = "単曲ループをオン（`on`）またはオフ（`off`）にします。"
+
+[ja-JP.repeat.parameters]
+toggle = "`on` または `off` を指定して、単曲ループ機能をオン/オフにします。"
+
+[ja-JP.about]
+short_description = "このボットに関する情報を表示する"
+description = "このボットに関する情報を表示します。"
+
+[ja-JP.remove]
+short_description = "再生リストから項目を削除する"
+description = "再生リストから特定の項目を削除します。次の2つの方法があります： 1. `which` のみを指定すると、再生リストの第 `which` 番目の項目が削除されます。 2. `which` と `to_which` の両方を指定すると、第 `which` 番目から第 `to_which` 番目までの項目がすべて削除されます。"
+
+[ja-JP.remove.parameters]
+which = "再生リストから削除する項目の番号"
+to_which = "オプション。指定された場合、第 `which` 番目から第 `to_which` 番目までの項目が削除されます。"
+
+[ja-JP.help]
+short_description = "コマンドの詳細な使用方法を照会する"
+[ja-JP.help.parameters]
+command = "照会するコマンド"
+
+[ja-JP.insert]
+short_description = "再生リストの最初に新しい項目を追加する"
+description = "再生リストの最初に新しい項目を追加します。`url` パラメータには任意のリンクを指定できます。複数のメディアプラットフォームをサポートしており、yt-dlpがサポートしているものであれば再生できます。YouTubeの再生リスト全体も追加できます。再生リスト付きのYouTube URLは再生リスト全体を優先して追加します。"
+[ja-JP.insert.parameters]
+url = "再生リストに追加するリンク"

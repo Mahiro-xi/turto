@@ -114,3 +114,59 @@ shuffle = "🔀✅"
 toggle_repeat = "🔂{repeat_status}"
 invalid_playlist_page = "播放清單只有{total_pages}頁"
 remove_many = "🗑️{removed_number}"
+
+# 以下はメッセージ中に出現するパラメータです。パラメータは必ず中括弧 "{" と "}" で囲む必要があります。
+# "bot_voice_channel" はボットが現在参加している/離れているボイスチャンネルを示し、言及方式で表示されます。
+# "title" は再生中/一時停止中/停止中の項目のタイトルです。
+# "volume" は設定された音量を示し、数値の絵文字で表されます。範囲は0から100です。
+# "autoleave_status" は自動離脱の状態で、オンまたはオフの絵文字で表されます。
+# "playlist_length" はサーバーの再生リストの長さです。
+# "length" は現在再生中の項目の長さです。
+# "seek_limit" はジャンプの時間制限で、config.toml の同名のパラメータに対応しています。
+# "user" はブロック中/解除中のユーザーで、言及方式で表示されます。
+# "command_name" は照会中のコマンド名です。
+# "repeat_status" は単曲ループの状態で、オンまたはオフの絵文字で表されます。
+# "total_pages" は再生リストの総ページ数です（総ページ数が25ページを超える場合に表示されます）。
+# "removed_number" は再生リストから削除された項目の数です（一度に10項目以上削除された場合に表示されます）。
+# turtoは多言語に対応しています。
+# デフォルト設定をコピーすることで、新しい言語サポートを追加できます。
+# ただし、"default" を希望するLCID (Locale ID) に変更する必要があります。
+# 例えば "Chinese - Taiwan" の場合、"default" を "zh-TW" に変更する必要があります。
+# 以下は日本語用の設定です。
+
+[ja-JP]
+not_playing = "再生していません。"
+user_not_in_voice_channel = "ボイスチャンネルに誰もいません！"
+bot_not_in_voice_channel = "ボイスチャンネルにturtoがいません！"
+different_voice_channel = "別のボイスチャンネルにいます！ {bot_voice_channel}"
+play = "▶️ {title}"
+pause = "⏸️ {title}"
+skip = "⏭️ {title}"
+skip_success = "⏭️✅"
+stop = "⏹️ {title}"
+join = "{voice_channel}⬅️🐢"
+leave = "⬅️🐢{voice_channel}"
+queue = "✅ {title}"
+remove = "❎ {title}"
+remove_all = "プレイリストはすべて削除されました。"
+invalid_remove_index = "無効なインデックス値です。 {playlist_length}."
+url_not_found = "URLが無効です！ `{url}`"
+invalid_url = "有効なURLを指定してください！"
+volume = "🔊{volume}"
+toggle_autoleave = "Autoleave: `{autoleave_status}`"
+seek_success = "⏩✅"
+invalid_seek = "無効なシーク位置です。 0秒以上または {seek_limit} 秒以下に指定してください。"
+seek_not_allow = "シークは許可されていません。"
+backward_seek_not_allow = "後方へのシークは許可されていません！"
+seek_not_long_enough = "`{title}` は {length} 秒以下で指定してください！"
+administrator_only = "このコマンドは管理者のみ有効です。"
+user_got_banned = "{user} をBanしました。"
+user_already_banned = "{user} は既にBanされているユーザーです！"
+user_got_unbanned = "{user} のBanを解除しました！"
+user_not_banned = "{user} はBanされていません。"
+banned_user_repsonse = "あなたはBanされているためコマンドは使えません。"
+empty_playlist = "プレイリストが空です！"
+shuffle = "🔀✅"
+toggle_repeat = "🔂{repeat_status}"
+invalid_playlist_page = "ページ数の最大は {total_pages} です！"
+remove_many = "🗑️{removed_number}"
