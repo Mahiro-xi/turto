@@ -47,6 +47,11 @@ pub async fn playwhat(ctx: Context<'_>) -> Result<(), Error> {
         },
         Err(err) => {
             error!("Error getting track: {err}");
+            ctx.say(TurtoMessage {
+                locale,
+                kind: NotPlaying,
+            })
+            .await?;
             return Ok(());
         }
     };
